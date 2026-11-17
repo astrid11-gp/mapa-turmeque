@@ -1,0 +1,178 @@
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* ---------- PANTALLA DE INICIO ---------- */
+body.inicio {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #1b5e20, #43a047 60%, #a5d6a7);
+  color: #fff;
+}
+
+.portada {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.etiqueta {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin: 0 0 8px;
+}
+
+.portada h1 {
+  font-size: clamp(2rem, 7vw, 4rem);
+  margin: 0 0 12px;
+}
+
+.subtitulo {
+  max-width: 520px;
+  font-size: 1.15rem;
+  margin: 0 0 28px;
+}
+
+.boton-grande {
+  background: #fff;
+  color: #1b5e20;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s;
+}
+.boton-grande:hover { transform: scale(1.05); }
+
+.pie {
+  text-align: center;
+  padding: 12px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ---------- PÁGINA DEL MAPA ---------- */
+.barra {
+  height: 52px;
+  background: #1b5e20;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 14px;
+}
+.barra h1 { font-size: 1rem; margin: 0; }
+.barra a.volver { color: #fff; text-decoration: none; font-weight: 600; }
+.barra button {
+  background: #fff;
+  color: #1b5e20;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#map { height: calc(100% - 52px); }
+
+.lugar-titulo { font-weight: 700; margin-bottom: 4px; }
+
+/* ---------- PANEL DE RUTAS ---------- */
+.panel {
+  position: absolute;
+  top: 64px;
+  left: 12px;
+  z-index: 1000;
+  width: 270px;
+  max-width: calc(100% - 24px);
+  background: #fff;
+  color: #222;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+}
+
+.panel-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.panel-titulo h2 { font-size: 1rem; margin: 0; }
+
+.panel label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.panel select {
+  width: 100%;
+  margin-top: 3px;
+  padding: 7px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.panel .modos {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.panel .modos label { font-weight: 400; margin: 0; }
+
+.panel .acciones { display: flex; gap: 8px; }
+.panel .acciones button {
+  flex: 1;
+  background: #1b5e20;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.panel .acciones button.secundario {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.panel .mini {
+  background: #e0e0e0;
+  border: 0;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#info-ruta { margin: 10px 0 0; font-weight: 600; }
+#info-ruta.error { color: #c62828; }
+
+.panel.minimizado #panel-cuerpo { display: none; }
+
+.btn-ir {
+  margin-top: 8px;
+  background: #1b5e20;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
